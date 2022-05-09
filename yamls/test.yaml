@@ -1,0 +1,18 @@
+
+# 必要参数 TODO
+data_dir: /mnt/data_process/VoxCeleb1_2_8k_wav/ #/mnt/zhaosheng/brain/CN-Celeb8k #/mnt/data_process/VoxCeleb1_2_8k_wav/
+sub_dir: vox1_test # wav? vox1_test? vox2_aac?
+
+speechbrain_model: /mnt/zhaosheng/brain/results/cncele_8k_v1/ecapa
+
+# /data/user_zhaozfieng/using_pretrained/sb_pretrained/ecapa_v12_8k_epoch19
+model_hparams: /mnt/zhaosheng/brain/train.yaml #!ref <speechbrain_model>/hyperparams.yaml
+GPU: 1
+
+# 数据
+trial_pair: /mnt/zhaozifeng/user_zhaozfieng/sb_evaluation/veri_test2.txt
+dur_max: 3
+
+# 实验
+save_path: !ref <speechbrain_model>/
+

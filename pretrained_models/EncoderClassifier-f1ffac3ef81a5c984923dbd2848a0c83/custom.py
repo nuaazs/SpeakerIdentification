@@ -1,0 +1,1 @@
+/mnt/zhaosheng/brain/results/cncele_8k_v1/ecapa/save/CKPT+2022-04-17+11-33-41+00/custom.py

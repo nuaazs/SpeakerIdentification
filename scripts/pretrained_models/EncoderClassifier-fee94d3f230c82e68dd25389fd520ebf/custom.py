@@ -1,0 +1,1 @@
+/mnt/zhaosheng/brain/results/voxceleb12_ecapa_augment/22041901/save/CKPT+2022-04-19+14-43-59+00/custom.py
