@@ -38,6 +38,7 @@ from get_dataset import getCJKF,getCNCeleb,getVoxCeleb,getCNCeleb_dict,getCJKF_d
 plt.rcParams['figure.figsize'] = (20,3)
 plt.style.use('ggplot')
 
+time_span = 20
 def testWav(wav,spkreg,sr=16000,split_num=4,min_length=5,similarity_limit=0.7):
     """
     质量检测
@@ -66,8 +67,8 @@ def testWav(wav,spkreg,sr=16000,split_num=4,min_length=5,similarity_limit=0.7):
 
 def make_data_base(item):
     spk,wav_filepaths_list = item
-    # time_span = 10
-    save_path = '/mnt/cjth_database_0508_16k_0.7'
+    time_span = 20
+    save_path = '/mnt/cjth_database_0508_16k_0.7_20'
     try:
         
         
@@ -100,8 +101,8 @@ def make_data_base(item):
             wav_1 = torch.tensor(wav[:length])
             wav_2 = torch.tensor(wav[length:])
 
-            wav_1 = wav_1
-            wav_2 = wav_2
+            wav_1 = wav_1[:sr*time_span]
+            wav_2 = wav_2[:sr*time_span]
             # seg_length = sr*time_span
             
             # if len(wav_2) <= seg_length*4:
@@ -146,7 +147,7 @@ def make_data_base(item):
                     continue
                 print("wav>1 ,达标")
                 # seg_length = sr*time_span
-                wav = torch.tensor(wav)
+                wav = torch.tensor(wav)[:sr*time_span]
 
                 # if len(wav)<= seg_length*4:
                 #     continue
